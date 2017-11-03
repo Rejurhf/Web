@@ -3,31 +3,91 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Tytuł dokumentu</title>
-<meta http-equiv="Content-Type" content="application/xhtml+xml;
-charset=UTF-8" />
+	<title>Zadanie 2</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
 </head>
 <body>
-<h1>Rozdział 1</h1>
-	<p>Leży sobie u grodu bram. Na rzeczką opodal krzaczka.</p>
-	<h2>Podrozdizał 1.1</h2>
-		<p><b>Potwora</b> <i>straszliwa.</i> <br/>
-<em>na</em> <strong>wierzchu</strong>, <tt>ślepiami</tt> <sup>łypiącymi.</sup> <sub>Dyszy</sub>, pluje i plądruje. A odór od niej <samp>straszliwy.</samp> <code>kod programu...</code><br/>
-<math>
-	H(s) = ∫<sub>0</sub><sup>∞</sup> e<sup>-st</sup> h(t) dt<sup>łypiącymi.</sup> <sub>Dyszy</sub><mo>&lt</mo><mo>&gt</mo>
-</math>
-</p>
 
-
-
-<p>
-    <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-  </p>
-<p>
-    <a href="http://charon.kis.agh.edu.pl/~ziommate/zad1.html">Zadanie 1</a>
-</p>
-<p>
-    <a href="http://charon.kis.agh.edu.pl/~ziommate/zad3.html">Zadanie 1</a>
-</p>
+    <h1>Ćwiczenie 2: formatowanie tekstu</h1>
+    <p>Formatowanie tekstu, wszystko w jednym akapicie...</p>
+    <ul>
+        <li>tekst pisany kursywą - na dwa sposoby</li>
+        <li>tekst pogrubiony - na dwa sposoby,</li>
+        <li>fragmenty kodu (inline) - na dwa sposoby,</li>
+        <li>prosty wzór matematyczny z indeksami górnym i dolnym oraz znakami <li>„większe od” oraz „mniejsze od”,</li>
+        <li>w wybranym miejscu, ręcznie złamana linijka</li>
+    </ul>
+    <p>
+		Link do zadań 
+        <a href="http://home.agh.edu.pl/~wojnicki/wiki/pl:jitw:lab_jitw_html">tutaj</a>
+    </p>
+    
+    <h2>Rozwiązenia zadań</h2>
+    <p>
+        <i>Kursywa pierwszy sposób, </i><em>i drugi sposób. </em><br/>
+        <b>Pogrubiony tekst pierwszy sposób, </b><strong>i drugi sposób. </strong><br/>
+        <samp>
+        public void foo() throws Exception {
+            try{
+                int d = 12/0;
+            }catch(Exception e){
+                // operacje związane z wystąpieniem wyjątku
+                throw e;
+        } 
+        </samp><br/>
+        <code>
+        public void foo() throws Exception {
+            try{
+                int d = 12/0;
+            }catch(Exception e){
+                // operacje związane z wystąpieniem wyjątku
+                throw e;
+            } 
+        </code><br/>
+        <math>
+            1~<mo>&gt;</mo>x<sub>1</sub>+x<sub>2</sub><mo>&lt;</mo>c<sup>2</sup>
+        </math><br/>
+         Złamana linijka<br/>
+        i proszę jest.
+    </p>
+    
+    <h2>Odpowiedzi na pytania</h2>
+        <h3>Jaka jest różnica między znacznikami i oraz em? Czy zawsze dają identyczne wyniki?</h3>
+            <p>
+                Strong jest znacznikiem semantycznym, b jest wizualne. Tekst po użyciu tych znaczników wygląda tak samo, jednak same znaczniki bardzo się różnią. &lt;em&gt; używa się, żeby coś zaakcentować podkreślić. Emfaza jest stanem logicznym - może być używana jako kursywa, ale też na przykład jako czerwony, podkreślony tekst. Znacznik &lt;i&gt; reprezentuje stan fizyczny - jest po prostu pochylonym tekstem. Nie jest on zabroniony, jednak nie jest zalecany, odkąd kwestię stylu pozostawia się CSS. Znacznik &lt;em&gt; może być nadpisywany w CSS. (Chociaż pojawiają się głosy że bedą traktowane tak samo przez wyszukiwarki i nie ma różnicy między nimi - 
+                <a 
+                   href="https://www.youtube.com/watch?v=awto_wCeOJ4">uzasadnienie
+                </a>
+                ).
+            </p>
+        <h3>Jaka jest różnica między znacznikami b oraz strong? Czy zawsze dają identyczne wyniki?</h3>
+            <p>
+                Tak samo jak w przypadku &lt;em&gt; i &lt;i&gt;, znaczniki &lt;strong&gt; i &lt;b&gt; różnią się od siebie. &lt;b&gt; wyraża tylko pogrubienie tekstu, natomiast &lt;strong&gt; stosuje się, by podkreślić znaczenie danego słowa czy zdania. Może mieć różną formę wizualną, można go nadpisać w CSS. (Chociaż pojawiają się głosy że bedą traktowane tak samo przez wyszukiwarki i nie ma różnicy między nimi - 
+                <a 
+                   href="https://www.youtube.com/watch?v=awto_wCeOJ4">uzasadnienie
+                </a>
+                ). Wizualnie dają ten sam efekt.</p>
+        <h3>Jaka jest różnica między znacznikami code oraz samp? Czy zawsze dają identyczne wyniki?</h3>
+            <p>
+                &lt;code&gt; stosuje się do kodów programów komputerowych, a &lt;samp&gt; do outputów programu. Nie muszą dawać identycznych wyników.
+            </p>
+        <h3>
+            Jaka jest różnica pomiędzy fragmentem strony sformatowanej tak: 
+            <code>&lt;p&gt;…&lt;/p&gt;&lt;p&gt;…&lt;/p&gt;</code>
+            oraz fragmentem o następującej postaci: 
+            <code>&lt;p&gt;…&lt;br/&gt;&lt;br/&gt;…&lt;/p&gt;</code>
+            ?
+        </h3>
+            <p>
+                Wizualnie te formatowania niczym się od siebie nie różnią, jednak po użyciu pierwszej możliwości mamy do czynienia z dwoma paragrafami, po użyciu drugiej - z jednym, podzielonym pustą linią.
+            </p>
+    
+	<h1>Walidacja</h1>
+		<p>
+			<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+		</p>
+		<p>
+			<a href="http://charon.kis.agh.edu.pl/~ziommate">Powrót</a>
+		</p>
 </body>
 </html>
