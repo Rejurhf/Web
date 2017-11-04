@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Zadanie 3</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
+</head>
+<body>
+	<h1>Ćwiczenie 3: tabele i listy</h1>
+        <p>
+            Utwórz nowy dokument, zawierający trzy nagłówki (trzy sekcje); w pierwszej sekcji umieść tabelę <b>[2 punkty]</b>, w drugiej wielopoziomową listę (wypunktowaną oraz numerowaną) <b>[1 punkty]</b>, a w trzeciej - wykaz definicji kilku terminów <b>[1 punkty]</b>.
+        </p>
+        <p>
+            Link do zadań 
+            <a href="http://home.agh.edu.pl/~wojnicki/wiki/pl:jitw:lab_jitw_html">tutaj</a>
+        </p>
+    
+    <h2>Rozwiązania zadań</h2>
+        <h3>Tabela</h3>
+        <table border="1" rules="all" cellpadding="5">
+            <thead>
+            <tr>
+                <th></th>
+                <th scope="col" align="center">Poniedziałek</th>
+                <th scope="col" align="center">Wtorek</th>
+                <th scope="col" align="center">Środa</th>
+                <th scope="col" align="center">Czwartek</th>
+                <th scope="col" align="center">Piątek</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row" align="center">18:00</th>
+                <td align="center">Kręgle</td>
+                <td align="center">Polo</td>
+                <td colspan="2" align="center">Golf</td>
+                <td align="center" rowspan="3">Impreza</td>
+            </tr>
+            <tr>
+                <th scope="row" align="center">20:00</th>
+                <td colspan="4" align="center">Basen i Sauna</td>
+            </tr>
+            <tr>
+                <th scope="row" align="center">22:00</th>
+                <td colspan="4" align="center">Spać</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th scope="row" align="center">Razem</th>
+                <td align="center">700'000</td>
+                <td align="center">450'000</td>
+                <td align="center">250'000</td>
+                <td align="center">150'000</td>
+                <td align="center">50'000</td>
+            </tr>
+            </tfoot>
+            </table>
+    
+        <h3>Lista</h3>
+        <ol>
+            <li>Element</li>
+            <li>Element</li>
+            <li>Element</li>
+            <ul>
+                <li>drugi poziom</li>
+                <li>drugi poziom</li>
+            </ul>
+            <li>Element</li>
+            <ol type="I">
+                <li>Numeracja drugiego poziomu</li>
+                <li>Numeracja drugiego poziomu</li>
+                <ol type="a">
+                    <li>trzeci poziom</li>
+                    <li>trzeci poziom</li>
+                </ol>
+                <li>Numeracja drugiego poziomu</li>
+            </ol>
+            <li>...</li>
+        </ol>
+    
+        <h3>Wykaz definicji</h3>
+        <dl>
+            <dt>Html</dt>
+                <dd>Język opisu stron internetowych</dd>
+            <dt>How2html</dt>
+                <dd>Serwis poświęcony nauce języka Html</dd>
+            <dt>Definicja</dt>
+                <dd>Opis</dd>
+        </dl>
+    
+    <div id="footer">
+    <div id="links">
+        <h1>Zadania z laboratorium - XHTML</h1>
+            <ul>
+                <li><a href="zad1.html">Zadanie 1</a></li>
+                <li><a href="zad2.html">Zadanie 2</a></li>
+                <li><a href="zad3.html">Zadanie 3</a></li>
+                <li><a href="zad4.html">Zadanie 4</a></li>
+                <li><a href="zad5.html">Zadanie 5</a></li>
+            </ul>
+    </div>
+
+    <div id="validation">
+        <h1>Walidacja</h1>
+            <p>
+                <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+            </p>
+    </div>
+    
+    <div id="back">
+        <p><a href="../index.html">Na Główną</a></p>    
+    </div>
+    </div><!--Koniec footera-->
+</body>
+</html>
