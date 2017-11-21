@@ -15,11 +15,11 @@ table tbody{
     text-transform: lowercase;
 }
 
-#col1{
+.col1{
     background-color: gainsboro;
     border-color: red;
 }
 
-#col2{
+.col2{
     background-color: skyblue;
 }
