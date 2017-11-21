@@ -1,0 +1,39 @@
+html{
+    background: #ababab;
+}
+
+body{
+    background: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2em;
+}
+
+.header{
+    border: medium solid black;
+    padding: 1em;
+}
+
+.exercise {
+    width: 100%;
+    background-color: #d7d7d7;
+}
+
+.menu {
+     float: left;
+     width: 20%;
+     background-color: #499afa;
+}
+
+.content {
+    float: left;
+    width: 80%;
+    background-color: #fab949;
+}
+
+#footer{
+    width: 800px;
+}
