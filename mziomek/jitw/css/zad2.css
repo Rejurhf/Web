@@ -1,0 +1,11 @@
+table{
+    border: 1mm;
+}
+
+#col1{
+    background-color: gainsboro;
+}
+
+#col2{
+    background-color: skyblue;
+}
