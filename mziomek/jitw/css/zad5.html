@@ -3,49 +3,122 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" title="Default" href="zad5.css"/>
+    <link rel="stylesheet" type="text/css" title="Default" href="zad5.css" media="screen"/>
+    <link href="zad5d.css" type="text/css" rel="stylesheet" media="print">
 	<title>Zadanie 5</title>
 </head>
 <body>
-    <div class="header">
+    <div id="header">
         <h1>Ćwiczenie 5: układ strony</h1>
             <p>Link do laboratorium <a href="http://home.agh.edu.pl/~wojnicki/wiki/pl:jitw:lab_jitw_css">tutaj</a></p>
-    </div><!--Koniec headera-->
-        
-    <div class="exercise">
-    <div class="menu">
-        <p>Spis treści</p>
-        <p><a href="#r1">Rozdział 1</a></p>
-        <p><a href="#r2">Rozdział 2</a></p>
-        <p><a href="#r3">Rozdział 3</a></p>
-        <p><a href="#r4">Rozdział 4</a></p>
-    </div><!--koniec menu-->
-    <div class="content">
+    </div>
+    <div id="left">
+        <div id="menu">
+            <p>Spis Treści</p>
+            <p><a href="#r1">Rozdział 1</a></p>
+            <p><a href="#r2">Rozdział 2</a></p>
+            <p><a href="#r3">Rozdział 3</a></p>
+            <p><a href="#r4">Rozdział 4</a></p>
+        </div>
+    </div>
+    <div id="right">
         <h1>Lorem Ipsum</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu luctus mi. Nam faucibus blandit sem quis imperdiet. Donec hendrerit turpis non maximus eleifend. Phasellus sit amet turpis pretium, eleifend elit nec, cursus sem. Morbi ut tempor libero. Nullam blandit libero in metus tempus tempor. Nam ut nibh sollicitudin, tincidunt lacus eget, dapibus libero. Phasellus vitae bibendum tellus. Donec id urna non orci accumsan tristique dictum porta lacus. Etiam enim quam, tempus eget eleifend quis, maximus non lacus. Aenean pretium tortor iaculis, iaculis augue a, aliquet metus. Cras eget velit lobortis, semper tellus at, tristique purus.</p>
             <h2 id="r1">Rozdział 1</h2>
                 <p>Cras in libero in odio sodales pellentesque eget ac est. Fusce ornare euismod feugiat. Phasellus maximus bibendum varius. Vivamus at dictum magna. Ut quis faucibus nisi, sed vehicula nisl. Morbi pulvinar aliquam nisl, rhoncus cursus ipsum dapibus eget. Donec vel ligula pretium, fringilla mauris ut, ornare libero. Suspendisse turpis ipsum, gravida in rutrum quis, venenatis ac ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent dignissim tellus id lorem placerat vulputate. Curabitur faucibus sit amet ante a accumsan. Sed justo lacus, placerat vel efficitur quis, cursus ut nisi.</p>
             <h2 id="r2">Rozdział 2</h2>
                 <p>Cras facilisis nulla et erat pulvinar pulvinar nec congue tellus. Maecenas sed consectetur enim. Donec in risus scelerisque, auctor lacus et, rutrum nisi. Praesent nulla nisi, tempor id condimentum vel, auctor faucibus risus. Sed sem ex, dictum sed pretium et, porttitor nec ipsum. Vestibulum et risus accumsan, elementum felis in, accumsan leo. Phasellus mauris mi, egestas eu egestas facilisis, finibus quis tortor. In vitae convallis massa. Praesent sit amet tristique dui. Vestibulum lacinia gravida pretium. Fusce ipsum velit, semper sit amet metus eu, congue posuere urna. Ut nisi arcu, molestie in finibus sed, commodo vitae dolor.</p>
+        
+                <div id="table">
+                    <table id="tab" rules="all" cellpadding="5">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th class="col1" scope="col" align="center">Poniedziałek</th>
+                            <th class="col2" scope="col" align="center">Wtorek</th>
+                            <th scope="col" align="center">Środa </th>
+                            <th scope="col" align="center">Czwartek</th>
+                            <th scope="col" align="center">Piątek</th>
+                        </tr>   
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th scope="row" align="center">Razem</th>
+                            <td class="col1" align="center">700'000</td>
+                            <td class="col2" align="center">450'000</td>
+                            <td align="center">250'000</td>
+                            <td align="center">150'000</td>
+                            <td align="center">50'000</td>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr>
+                            <th scope="row" align="center">18:00</th>
+                            <td class="col1" align="center">Kręgle</td>
+                            <td class="col2" align="center">Polo</td>
+                            <td colspan="2" align="center">Golf</td>
+                            <td align="center" rowspan="3">Impreza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" align="center">20:00</th>
+                            <td class="col1" align="center">Kręgle</td>
+                            <td class="col2" align="center">Polo</td>
+                            <td colspan="2" align="center">Golf</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" align="center">22:00</th>
+                            <td class="col1" align="center">Kręgle</td>
+                            <td class="col2" align="center">Polo</td>
+                            <td colspan="2" align="center">Golf</td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </div><!--Koniec tabeli-->
                 
                 <p>Praesent quis orci quis leo dictum commodo. Fusce vel volutpat ex. Duis accumsan erat quis ligula tempor, in facilisis mi auctor. Duis faucibus dictum enim in elementum. Nunc sed gravida nisi, vitae malesuada ex. Integer eget massa ut quam efficitur fermentum. Aenean rhoncus lorem sit amet metus euismod tempus. Ut rutrum congue venenatis.</p>
                 
                 <h3>Podrozdział</h3>
                     <p>Mauris sit amet dui id orci scelerisque vulputate. Cras rhoncus id elit at eleifend. Cras ut tincidunt diam. Mauris eget diam vitae ligula elementum dictum. Sed quis nulla efficitur, vestibulum eros vel, blandit felis. Phasellus rutrum mi vel lacinia volutpat. Curabitur lorem nunc, imperdiet sit amet quam vitae, blandit ultricies tortor. Etiam risus leo, convallis quis tortor et, porttitor pharetra lacus. Donec ut dapibus dui. Donec scelerisque ultricies odio, id elementum libero hendrerit vel. Praesent bibendum, augue at consectetur tempus, ex dolor faucibus massa, nec sodales nulla ex ac est.</p>
             <h2 id="r3">Rozdział 3</h2>
+                <img id="img1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png" alt="html5" />
+                <img id="img2" src="https://php.quicoto.com/wp-content/uploads/2013/06/css3.jpg" alt="css3" />
                 <p>Cras in libero in odio sodales pellentesque eget ac est. Fusce ornare euismod feugiat. Phasellus maximus bibendum varius. Vivamus at dictum magna. Ut quis faucibus nisi, sed vehicula nisl. Morbi pulvinar aliquam nisl, rhoncus cursus ipsum dapibus eget. Donec vel ligula pretium, fringilla mauris ut, ornare libero. Suspendisse turpis ipsum, gravida in rutrum quis, venenatis ac ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent dignissim tellus id lorem placerat vulputate. Curabitur faucibus sit amet ante a accumsan. Sed justo lacus, placerat vel efficitur quis, cursus ut nisi.</p>
             <h2 id="r4">Rozdział 4</h2>
                 <p>Cras facilisis nulla et erat pulvinar pulvinar nec congue tellus. Maecenas sed consectetur enim. Donec in risus scelerisque, auctor lacus et, rutrum nisi. Praesent nulla nisi, tempor id condimentum vel, auctor faucibus risus. Sed sem ex, dictum sed pretium et, porttitor nec ipsum. Vestibulum et risus accumsan, elementum felis in, accumsan leo. Phasellus mauris mi, egestas eu egestas facilisis, finibus quis tortor. In vitae convallis massa. Praesent sit amet tristique dui. Vestibulum lacinia gravida pretium. Fusce ipsum velit, semper sit amet metus eu, congue posuere urna. Ut nisi arcu, molestie in finibus sed, commodo vitae dolor.</p>
+        
+                <div id="list">
+                    <ol>
+                        <li>Element</li>
+                        <li>Element</li>
+                        <li>Element
+                            <ol>
+                                <li>drugi poziom</li>
+                                <li>drugi poziom</li>
+                            </ol>
+                        </li>
+                        <li>Element
+                            <ol>
+                                <li>Numeracja drugiego poziomu</li>
+                                <li>Numeracja drugiego poziomu
+                                    <ol>
+                                        <li>trzeci poziom</li>
+                                        <li>trzeci poziom</li>
+                                    </ol>
+                                </li>
+                                <li>Numeracja drugiego poziomu</li>
+                            </ol>
+                        </li>
+                        <li>...</li>
+                    </ol>
+                </div>
                 
                 <p>Praesent quis orci quis leo dictum commodo. Fusce vel volutpat ex. Duis accumsan erat quis ligula tempor, in facilisis mi auctor. Duis faucibus dictum enim in elementum. Nunc sed gravida nisi, vitae malesuada ex. Integer eget massa ut quam efficitur fermentum. Aenean rhoncus lorem sit amet metus euismod tempus. Ut rutrum congue venenatis.</p>
                 
                 <h3>Podrozdział</h3>
                     <p>Mauris sit amet dui id orci scelerisque vulputate. Cras rhoncus id elit at eleifend. Cras ut tincidunt diam. Mauris eget diam vitae ligula elementum dictum. Sed quis nulla efficitur, vestibulum eros vel, blandit felis. Phasellus rutrum mi vel lacinia volutpat. Curabitur lorem nunc, imperdiet sit amet quam vitae, blandit ultricies tortor. Etiam risus leo, convallis quis tortor et, porttitor pharetra lacus. Donec ut dapibus dui. Donec scelerisque ultricies odio, id elementum libero hendrerit vel. Praesent bibendum, augue at consectetur tempus, ex dolor faucibus massa, nec sodales nulla ex ac est.</p>
-    </div><!--koniec contentu-->
     </div>
-    
     <div id="footer">
-    <div id="validation">
+        <div class="validation">
         <h1>Walidacja</h1>
             <p>
                 <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
@@ -62,6 +135,6 @@
     <div id="back">
         <p><a href="../index.html">Na Główną</a></p>    
     </div>
-    </div><!--Koniec footera-->
+    </div>
 </body>
 </html>
