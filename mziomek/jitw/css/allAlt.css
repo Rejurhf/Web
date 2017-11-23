@@ -16,26 +16,26 @@ body{
 #header {
     background-color:gold;
     text-align: center;
+    border: 2px solid darkgray;
 }
 
 #left {
-    display: table-cell;
     background-color:#DDD;
-    width: 25%;
-    min-height: 150px;
+    min-height: 40px;
     align-items: center;
     margin: 0 auto;
+    width: 100%;
 }
 
 #left #menu{
-    width: 200px;
-    position: fixed;
     text-align: center;
 }
 
 #left #menu p{
     background-color: gray;
     border: 1px solid black;
+    float: left;
+    width: 142px;
 }
 
 #left #menu p:hover{
@@ -43,14 +43,11 @@ body{
 }
 
 #right {
-    display: table-cell;
     background-color:#EEE;
-    width: 75%;
     min-height: 150px;
 }
 
 #footer {
-    clear: both;
     background-color:gold;
 }
 
