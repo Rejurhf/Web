@@ -23,9 +23,6 @@
 	$ile = strlen($haslo);
 	while (!feof($plik)) {
   		$s = fgets($plik);
-		if($ile == strlen($s)-1){
-			echo $s;
-		$s = fgets($plik);
 		for($i = 0; $i < $ile; $i++){
 			if($haslo[$i] == '_')
 				continue;
@@ -36,8 +33,6 @@
 		       echo $s;	
 		echo '<br>';
 	}
-	fclose($plik);
-    echo '<br>';
-?>
+	fclose($plik); ?>
 </body>
 </html>
