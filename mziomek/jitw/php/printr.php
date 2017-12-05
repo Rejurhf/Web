@@ -25,7 +25,15 @@
   		$s = fgets($plik);
 		if($ile == strlen($s)-1){
 			echo $s;
+		$s = fgets($plik);
+		for($i = 0; $i < $ile; $i++){
+			if($haslo[$i] == '_')
+				continue;
+			if($s[$i] != $haslo[$i])
+				break;
 		}
+		if($ile == $i)
+		       echo $s;	
 		echo '<br>';
 	}
 	fclose($plik);
