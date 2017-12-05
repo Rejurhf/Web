@@ -35,6 +35,7 @@
 		echo '<br>';
 	}
 	fclose($plik);
+    echo '<br>';
 ?>
 </body>
 </html>
