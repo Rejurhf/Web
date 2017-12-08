@@ -10,9 +10,10 @@
 <?php
 	$name = $_POST['name'];
 	$passwd = md5($_POST['passwd']);
+    $dscrp = $_POST['dscrp'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
     $dir = "";
-    
-    echo "$name<br>$passwd<br>";
     
     if ($path = opendir('.')) {
         while (false !== ($entry = readdir($path))) {
@@ -22,7 +23,6 @@
                 $sName = substr($s,0,strlen($s)-1);
                 $s = fgets($file);
                 $sPasswd = substr($s,0,strlen($s)-1);
-                echo "<br>$sName<br>$sPasswd<br>";
                 if($sName == $name && $sPasswd == $passwd){
                     $dir = $entry;
                     fclose($plik);
@@ -34,9 +34,41 @@
         }
         closedir($path);
     }
-    if($dir == ""){
-        echo "$dir<br>";
-        echo "Błędna nazwa użytkownika lub hasło<br>";
+    if($dir != ""){
+        $postN = substr($date, 0, 4) . substr($date, 5, 2) . substr($date, 8, 2) . 
+            substr($time, 0, 2) . substr($time, 3, 5) . "01";
+        echo "<br>$postN";
+        
+        $plik = fopen($dir . "/" . $postN . ".txt", "w");
+        echo "<br>$dscrp";
+        fputs($plik, $dscrp);
+        fclose($plik);
+        
+        $fileName = $_FILES['plik1']['name'];
+        echo "<br>$fileName";
+        if(move_uploaded_file($_FILES['plik1']['tmp_name'], $dir . "/" . $fileName)){
+            echo "<br>jest plik 1";
+        }else{
+            echo "<br>nie ma pliku 1";
+        }
+        
+        $fileName = $_FILES['plik2']['name'];
+        echo "<br>$fileName";
+        if(move_uploaded_file($_FILES['plik2']['tmp_name'], $dir . "/" . $fileName)){
+            echo "<br>jest plik 2";
+        }else{
+            echo "<br>nie ma pliku 2";
+        }
+        
+        $fileName = $_FILES['plik3']['name'];
+        echo "<br>$fileName";
+        if(move_uploaded_file($_FILES['plik3']['tmp_name'], $dir . "/" . $fileName)){
+            echo "<br>jest plik 3";
+        }else{
+            echo "<br>nie ma pliku 3";
+        }
+    }else{
+        echo "Błędna nazwa użytkownika lub hasło<br>";    
     }
 ?>
 </body>
