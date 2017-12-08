@@ -35,8 +35,9 @@
         closedir($path);
     }
     if($dir != ""){
+        $srvInf = getdate();
         $postN = substr($date, 0, 4) . substr($date, 5, 2) . substr($date, 8, 2) . 
-            substr($time, 0, 2) . substr($time, 3, 5) . "01";
+            substr($time, 0, 2) . substr($time, 3, 5) . $srvInf['seconds'] . "01";
         echo "<br>$postN";
         
         $plik = fopen($dir . "/" . $postN . ".txt", "w");
@@ -44,24 +45,28 @@
         fputs($plik, $dscrp);
         fclose($plik);
         
-        $fileName = $_FILES['plik1']['name'];
-        echo "<br>$fileName";
+        $info = getdate();
+        $fileN = $_FILES['plik1']['name'];
+        $cont = substr($fileN, strpos($fileN, "."));
+        $fileName = substr($postN, 0, 12) . $srvInf['seconds'] . "011" . $cont;  
         if(move_uploaded_file($_FILES['plik1']['tmp_name'], $dir . "/" . $fileName)){
             echo "<br>jest plik 1";
         }else{
             echo "<br>nie ma pliku 1";
         }
         
-        $fileName = $_FILES['plik2']['name'];
-        echo "<br>$fileName";
+        $fileN = $_FILES['plik2']['name'];
+        $cont = substr($fileN, strpos($fileN, "."));
+        $fileName = substr($postN, 0, 12) . $srvInf['seconds'] . "012" . $cont;
         if(move_uploaded_file($_FILES['plik2']['tmp_name'], $dir . "/" . $fileName)){
             echo "<br>jest plik 2";
         }else{
             echo "<br>nie ma pliku 2";
         }
         
-        $fileName = $_FILES['plik3']['name'];
-        echo "<br>$fileName";
+        $fileN = $_FILES['plik3']['name'];
+        $cont = substr($fileN, strpos($fileN, "."));
+        $fileName = substr($postN, 0, 12) . $srvInf['seconds'] . "013" . $cont;
         if(move_uploaded_file($_FILES['plik3']['tmp_name'], $dir . "/" . $fileName)){
             echo "<br>jest plik 3";
         }else{
