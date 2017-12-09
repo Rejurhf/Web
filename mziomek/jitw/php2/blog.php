@@ -4,19 +4,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
 	<meta http-equiv="Content-Type" content="text/plain; charset=utf-8"/>
-	<title>Lab PHP</title>
+	<title>Blog</title>
 </head>
 <body>
-	<?php
-	if(!mkdir((string)$_POST['blogName'], 0777, true)){
-		echo 'Taki folder juz istnieje<br>';
-	}else{
-        $pass = $_POST['passwd'];
-        $plik = fopen($_POST['blogName']."/info.txt", "w");
-        fputs($plik, $_POST['name']."\n");
-        fputs($plik, md5($pass)."\n");
-        fputs($plik, $_POST['dscrp']);
-        fclose($plik);
+<?php
+    $name = $_GET['name'];
+	if($name == ""){
+        echo "Wyświetl wszystko";
+        
+    }else if(file_exists($name)){
+        echo "Blog $name";
+    
+        $file = fopen($name . '/info.txt', 'r');
+        $s = fgets($file);
+        $s = fgets($file);
+        while (!feof($file)){
+            $s = fgets($file);
+            echo "<br>$s";
+        }
+        fclose($file);
+        
+    }else{
+        echo "Nie ma takiego bloga";
     }
 ?>
 </body>
