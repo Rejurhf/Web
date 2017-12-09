@@ -8,17 +8,19 @@
 </head>
 <body>
 	<form action="koment.php" method="POST" enctype="multipart/form-data">
-	Komentarz<br>
-	Imię/Nazwisko/Pseudonim:<br>
-	<input type="text" name="name"><br><br>
-	<select name="Rodzaj">
-		<option>Pozytywny</option>
-		<option>Negatywny</option>
-		<option>Neutralny</option>
-	</select><br>
-    Komentarz:<br>
-	<textarea name="coment" rows="10" cols="30">Wpisz Twój komentarz</textarea><br><br>
-	<input type="submit" value="Wyślij">
+        Komentarz<br>
+        Imię/Nazwisko/Pseudonim:<br>
+        <input type="text" name="name"><br><br>
+        Rodzaj<br>
+        <select name="comType">
+            <option>Pozytywny</option>
+            <option>Negatywny</option>
+            <option>Neutralny</option>
+        </select><br>
+        Komentarz:<br>
+        <textarea name="coment" rows="10" cols="30">Wpisz Twój komentarz</textarea><br><br>
+        <input type="submit" value="Wyślij">
+        <input type="reset" value="Wyczyść" name="reset" />
 	</form>
 </body>
 </html>

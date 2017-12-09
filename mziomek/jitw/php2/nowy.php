@@ -10,14 +10,14 @@
 	<?php
 	if(!mkdir((string)$_POST['blogName'], 0777, true)){
 		echo 'Taki folder juz istnieje<br>';
-	}
-
-	$pass = $_POST['passwd'];
-	$plik = fopen($_POST['blogName']."/info.txt", "w");
-	fputs($plik, $_POST['name']."\n");
-	fputs($plik, md5($pass)."\n");
-	fputs($plik, $_POST['dscrp']);
-	fclose($plik);
+	}else{
+        $pass = $_POST['passwd'];
+        $plik = fopen($_POST['blogName']."/info.txt", "w");
+        fputs($plik, $_POST['name']."\n");
+        fputs($plik, md5($pass)."\n");
+        fputs($plik, $_POST['dscrp']);
+        fclose($plik);
+    }
 ?>
 </body>
 </html>
