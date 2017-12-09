@@ -10,7 +10,18 @@
 <?php
     $name = $_GET['name'];
 	if($name == ""){
-        echo "Wyświetl wszystko";
+        echo "Wszystkie Blogi:";
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . 
+            $_SERVER['REQUEST_URI'];
+        if ($path = opendir('.')) {
+        while (false !== ($entry = readdir($path))) {
+            if ($entry != "." && $entry != ".." && is_dir($entry)){
+                echo "<br><a href='".$url . $entry."'>$entry</a>";
+            }
+        }
+        closedir($path);
+        }   
+        
         
     }else if(file_exists($name)){
         echo "Blog $name";
