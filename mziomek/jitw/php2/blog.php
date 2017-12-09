@@ -13,6 +13,7 @@
         echo "Wszystkie Blogi:";
         $url = 'http://' . $_SERVER['SERVER_NAME'] . 
             $_SERVER['REQUEST_URI'];
+        
         if ($path = opendir('.')) {
         while (false !== ($entry = readdir($path))) {
             if ($entry != "." && $entry != ".." && is_dir($entry)){
@@ -35,8 +36,34 @@
         }
         fclose($file);
         
+        if ($path = opendir($name)) {
+        while (false !== ($entry = readdir($path))) {
+            $onlyN = strtok($entry, '.');
+            if (!is_dir($entry) && strlen($onlyN) == 16){
+                echo "<br>";
+                $file = fopen($name . '/' . $entry, 'r');
+                while (!feof($file)){
+                    $s = fgets($file);
+                    echo "<br>$s";
+                }
+                fclose($file);
+                
+                if ($subPath = opendir($name)) {
+                while (false !== ($subEntry = readdir($subPath))) {
+                    if (!is_dir($subEntry) && substr($subEntry, 0, 16) == $onlyN && strlen(strtok($subEntry, '.')) != 16){
+                        echo "<br><a href='a/".$subEntry."'>$subEntry</a>";
+                    }
+                }
+                closedir($subPath);
+                }
+            }
+        }
+        closedir($path);
+        }
+        
     }else{
         echo "Nie ma takiego bloga";
+        echo "<br><a href='formBlog.html'>Powrót</a>";
     }
 ?>
 </body>
