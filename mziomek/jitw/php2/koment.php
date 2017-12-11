@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php
+    include 'menu.php';
     $srvInf = getdate();
     $num = -1;
     $mon = $srvInf['mon'];

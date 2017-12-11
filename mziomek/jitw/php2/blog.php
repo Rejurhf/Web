@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php
+    include 'menu.php';
     $name = $_GET['name'];
 	if($name == ""){
         echo "Wszystkie Blogi:";
