@@ -26,11 +26,11 @@
                 $sPasswd = substr($s,0,strlen($s)-1);
                 if($sName == $name && $sPasswd == $passwd){
                     $dir = $entry;
-                    fclose($plik);
+                    fclose($file);
                     echo "Otwarto blog: $dir<br>";
                     break;
                 }
-                fclose($plik);
+                fclose($file);
             }
         }
         closedir($path);

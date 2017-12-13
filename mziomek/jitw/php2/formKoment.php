@@ -10,6 +10,30 @@
     <?php include 'menu.php'; ?>
 	<form action="koment.php" method="POST" enctype="multipart/form-data">
         Komentarz<br>
+        Komentowany Wpis:<br>
+        
+        <select name="post">
+            <?php 
+            if ($path = opendir('.')) {
+                while (false !== ($entry = readdir($path))) {
+                    if ($entry != "." && $entry != ".." && is_dir($entry)){
+                        if ($subPath = opendir($entry)) {
+                            while (false !== ($subEntry = readdir($subPath))) {
+                                $onlyName = strtok($subEntry, '.'); 
+                                if (!is_dir($subEntry) && 
+                                    strlen($onlyName) == 16){
+                                    echo "<option>" . "$onlyName" . "</option>";
+                                }
+                            }
+                        closedir($subPath);
+                        }
+                    }
+                }
+                closedir($path);
+            }
+            ?><br>
+        
+        </select><br><br>
         Imię/Nazwisko/Pseudonim:<br>
         <input type="text" name="name"><br><br>
         Rodzaj<br>
@@ -17,7 +41,7 @@
             <option>Pozytywny</option>
             <option>Negatywny</option>
             <option>Neutralny</option>
-        </select><br>
+        </select><br><br>
         Komentarz:<br>
         <textarea name="coment" rows="10" cols="30">Wpisz Twój komentarz</textarea><br><br>
         <input type="submit" value="Wyślij">
