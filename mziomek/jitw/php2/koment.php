@@ -41,8 +41,7 @@
                 $num = $num + 1;
                 echo "<br>$entry";
             }
-        }
-            
+        }   
         closedir($path);
         }
         
