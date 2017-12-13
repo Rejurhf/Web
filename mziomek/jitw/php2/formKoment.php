@@ -21,7 +21,7 @@
                             while (false !== ($subEntry = readdir($subPath))) {
                                 $onlyName = strtok($subEntry, '.'); 
                                 if (!is_dir($subEntry) && 
-                                    strlen($onlyName) == 16){
+                                    strlen($onlyName) == 16 && $onlyName != $subEntry){
                                     echo "<option>" . "$onlyName" . "</option>";
                                 }
                             }

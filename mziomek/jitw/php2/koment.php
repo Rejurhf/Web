@@ -42,13 +42,15 @@
                 echo "<br>$entry";
             }
         }
+            
         closedir($path);
         }
         
         $num += 1;
         $plik = fopen($dir . "/" . $num . ".txt", "w");
+        $dateS = date('Y-m-d, H:i:s');
         fputs($plik, $_POST['comType'] . "\n");
-        fputs($plik, $date . "\n");
+        fputs($plik, $dateS . "\n");
         fputs($plik, $_POST['name'] . "\n");
         fputs($plik, $_POST['coment']);
         fclose($plik);
@@ -65,8 +67,9 @@
         
         $num += 1;
         $plik = fopen($dir . "/" . $num . ".txt", "w");
+        $dateS = date('Y-m-d, H:i:s');
         fputs($plik, $_POST['comType'] . "\n");
-        fputs($plik, date('Y-m-d, H:i:s') . "\n");
+        fputs($plik, $dateS . "\n");
         fputs($plik, $_POST['name'] . "\n");
         fputs($plik, $_POST['coment']);
         fclose($plik);
