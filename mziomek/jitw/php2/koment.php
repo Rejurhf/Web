@@ -9,37 +9,36 @@
 <body>
 <?php
     include 'menu.php';
-    $srvInf = getdate();
+    $postN = $_POST['post'];
+    $dir = "";
+    if ($path = opendir('.')) {
+        while (false !== ($entry = readdir($path))) {
+            if ($entry != "." && $entry != ".." && is_dir($entry)){
+                if ($subPath = opendir($entry)) {
+                    while (false !== ($subEntry = readdir($subPath))) {
+                        $onlyName = strtok($subEntry, '.'); 
+                        if (!is_dir($subEntry) && $onlyName == $postN){
+                            $dir = $entry;
+                            break;
+                        }
+                    }
+                    closedir($subPath);
+                }
+            }
+            if($dir != "")
+                break;
+        }
+        closedir($path);
+    }
+    
     $num = -1;
-    $mon = $srvInf['mon'];
-    if($mon < 10)
-        $mon = "0" . $srvInf['mon'];
-    $mday = $srvInf['mday'];
-    if($mday < 10)
-        $mday = "0" . $srvInf['mday'];
-    $hours = $srvInf['hours'];
-    if($hours < 10)
-        $hours = "0" . $srvInf['hours'];
-    $mnt = $srvInf['minutes'];
-    if($mnt < 10)
-        $mnt = "0" . $srvInf['minutes'];
-    $sec = $srvInf['seconds'];
-    if($sec < 10)
-        $sec = "0" . $srvInf['seconds'];
-    $year = $srvInf['year'];
-    
-    $dir = $year . $mon . $mday . $hours . $mnt . $sec . "01";
-    $date = $year . "-" . $mon . "-" . $mday . "," . 
-        $hours . ":" . $mnt . ":" . $sec;
-    
+    $dir = $dir . "/" . $postN;
 	if(!mkdir($dir, 0777, true)){
 		echo 'Taki folder juz istnieje<br>';
-	}else{
         if ($path = opendir($dir)) {
         while (false !== ($entry = readdir($path))){
             if ($entry != "." && $entry != ".." && !is_dir($entry)){
-                if($entry > $num)
-                    $num = $entry;
+                $num = $num + 1;
                 echo "<br>$entry";
             }
         }
@@ -50,6 +49,24 @@
         $plik = fopen($dir . "/" . $num . ".txt", "w");
         fputs($plik, $_POST['comType'] . "\n");
         fputs($plik, $date . "\n");
+        fputs($plik, $_POST['name'] . "\n");
+        fputs($plik, $_POST['coment']);
+        fclose($plik);
+	}else{
+        if ($path = opendir($dir)) {
+        while (false !== ($entry = readdir($path))){
+            if ($entry != "." && $entry != ".." && !is_dir($entry)){
+                $num = $num + 1;
+                echo "<br>$entry";
+            }
+        }
+        closedir($path);
+        }
+        
+        $num += 1;
+        $plik = fopen($dir . "/" . $num . ".txt", "w");
+        fputs($plik, $_POST['comType'] . "\n");
+        fputs($plik, date('Y-m-d, H:i:s') . "\n");
         fputs($plik, $_POST['name'] . "\n");
         fputs($plik, $_POST['coment']);
         fclose($plik);
