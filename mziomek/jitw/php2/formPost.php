@@ -7,6 +7,7 @@
 	<title>Post</title>
 </head>
 <body>
+    <?php include 'menu.php'; ?>
 	<form action="wpis.php" method="POST" enctype="multipart/form-data">
         Wpis<br>
         Nazwa użytkownika:<br>

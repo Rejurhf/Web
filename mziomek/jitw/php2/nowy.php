@@ -7,7 +7,8 @@
 	<title>Lab PHP</title>
 </head>
 <body>
-	<?php
+<?php
+    include 'menu.php';
 	if(!mkdir((string)$_POST['blogName'], 0777, true)){
 		echo 'Taki folder juz istnieje<br>';
 	}else{

@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php
+    include 'menu.php';
 	$name = $_POST['name'];
 	$passwd = md5($_POST['passwd']);
     $dscrp = $_POST['dscrp'];

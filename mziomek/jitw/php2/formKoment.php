@@ -7,6 +7,7 @@
 	<title>Lab PHP</title>
 </head>
 <body>
+    <?php include 'menu.php'; ?>
 	<form action="koment.php" method="POST" enctype="multipart/form-data">
         Komentarz<br>
         Imię/Nazwisko/Pseudonim:<br>

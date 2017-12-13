@@ -7,6 +7,7 @@
 	<title>Lab PHP</title>
 </head>
 <body>
+    <?php include 'menu.php'; ?>
 	<form action="nowy.php" method="POST">
         Tworzenie<br>
         Nazwa bloga:<br>

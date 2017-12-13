@@ -7,6 +7,7 @@
 	<title>Blog</title>
 </head>
 <body>
+    <?php include 'menu.php'; ?>
 	<form action="blog.php" method="GET">
         Wpisz nazwę bloga:<br>
         <input type="text" name="name"><br>
