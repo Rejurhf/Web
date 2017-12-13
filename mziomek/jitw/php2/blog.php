@@ -58,7 +58,7 @@
                 while (false !== ($subEntry = readdir($subPath))) {
                     if (!is_dir($subEntry) && substr($subEntry, 0, 16) == $onlyN && 
                         strlen(strtok($subEntry, '.')) != 16){
-                        echo "<br><a href='a/".$subEntry."'>$subEntry</a>";
+                        echo "<br><a href='" . $name . "/" . $subEntry . "'>$subEntry</a>";
                     }
                 }
                 closedir($subPath);

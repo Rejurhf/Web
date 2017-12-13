@@ -11,25 +11,6 @@
     include 'menu.php';
     $postN = $_POST['post'];
     $dir = "";
-    if ($path = opendir('.')) {
-        while (false !== ($entry = readdir($path))) {
-            if ($entry != "." && $entry != ".." && is_dir($entry)){
-                if ($subPath = opendir($entry)) {
-                    while (false !== ($subEntry = readdir($subPath))) {
-                        $onlyName = strtok($subEntry, '.'); 
-                        if (!is_dir($subEntry) && $onlyName == $postN){
-                            $dir = $entry;
-                            break;
-                        }
-                    }
-                    closedir($subPath);
-                }
-            }
-            if($dir != "")
-                break;
-        }
-        closedir($path);
-    }
     
     $num = -1;
     $dir = $dir . "/" . $postN;
@@ -53,6 +34,7 @@
         fputs($plik, $_POST['name'] . "\n");
         fputs($plik, $_POST['coment']);
         fclose($plik);
+        echo "Komentarz został dodany";
 	}else{
         if ($path = opendir($dir)) {
         while (false !== ($entry = readdir($path))){
@@ -72,6 +54,7 @@
         fputs($plik, $_POST['name'] . "\n");
         fputs($plik, $_POST['coment']);
         fclose($plik);
+        echo "Komentarz został dodany";
     }
         
 ?>
