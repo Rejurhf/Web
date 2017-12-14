@@ -9,15 +9,19 @@
 <body>
 <?php
     include 'menu.php';
-	if(!mkdir((string)$_POST['blogName'], 0777, true)){
-		echo 'Taki folder juz istnieje<br>';
-	}else{
-        $pass = $_POST['passwd'];
-        $plik = fopen($_POST['blogName']."/info.txt", "w");
-        fputs($plik, $_POST['name']."\n");
-        fputs($plik, md5($pass)."\n");
-        fputs($plik, $_POST['dscrp']);
-        fclose($plik);
+    $semRes = sem_get( 1111, 1, 0666, 0);
+    if (sem_acquire($semRes)) {
+        if(!mkdir((string)$_POST['blogName'], 0777, true)){
+            echo 'Taki folder juz istnieje<br>';
+        }else{
+            $pass = $_POST['passwd'];
+            $plik = fopen($_POST['blogName']."/info.txt", "w");
+            fputs($plik, $_POST['name']."\n");
+            fputs($plik, md5($pass)."\n");
+            fputs($plik, $_POST['dscrp']);
+            fclose($plik);
+        }
+        sem_release($semRes);
     }
 ?>
 </body>

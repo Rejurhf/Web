@@ -18,13 +18,12 @@
         if ($path = opendir('.')) {
         while (false !== ($entry = readdir($path))) {
             if ($entry != "." && $entry != ".." && is_dir($entry)){
-                echo "<br><a href='".$url . $entry."'>$entry</a>";
+                $entryEnc = urlencode($entry);
+                echo "<br><a href='".$url . $entryEnc."'>$entry</a>";
             }
         }
         closedir($path);
         }   
-        
-        
     }else if(file_exists($name)){
         echo "Blog $name";
         
