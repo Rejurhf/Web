@@ -29,6 +29,7 @@
         echo "Blog $name";
         
         echo "<br><br>Opis:";
+        echo "<br><br>Opis:";
         $file = fopen($name . '/info.txt', 'r');
         $s = fgets($file);
         $s = fgets($file);
