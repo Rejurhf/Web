@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Lab JS batak</title>
+	<title>JS Gra</title>
 <style type="text/css">
 div#d1, div#d2, div#d3, div#d4 {
 	background-color: red;
@@ -15,6 +15,7 @@ div#d1 {
 	top: 10px;
 }
 div#d2 {
+    top: 10px;
 	right: 10px;
 }
 div#d3 {
@@ -29,33 +30,50 @@ div#srodek {
 }
 </style>
 <script type="text/javascript">
-<!--
 var czas = -1;
 var stop = 0;
+var current = 0;
+var suma = 0;
+var proby = 0;
 function start(){
-	var name = "d" + Math.round(Math.random()*4);
-	document.getElementById(name).style.background = "blue";
-	obliczaj();
+    if(stop == 0){
+        var rand = Math.random()*1000;
+        setTimeout("setBlue()",rand);
+    }
+}
+    
+function setBlue(){
+    current = Math.round(Math.random()*3+1);
+    var name = "d" + current;
+    document.getElementById(name).style.background = "blue";
+    stop = 1;
+    odliczaj();
 }
 
 function odliczaj(){
 	czas++
-	if(stop == 0){
+	if(stop == 1){
+        document.getElementById('komunikat').innerHTML = "Czas reakcji: " +
+            czas + "[ms]";
 		setTimeout("odliczaj()",1);
-		document.getElementById('komunikat').innerHTML = czas;
 	}else{
 		czas = -1;
-		stop = 0;
+        start();
 	}
 }
 
 function wcisnieto(n){
-	var name = "d" + n;
-	document.getElementById(name).style.background = "red";
-	document.getElementById('komunikat').innerHTML = czas;
-	stop = 1;
+    var name = "d" + n;
+	if(n == current){
+        document.getElementById(name).style.background = "red";
+        suma += czas;
+        proby++;
+        document.getElementById('srednia').innerHTML = "Srednia: " +
+            Math.round(suma/proby) + "[ms]";
+        stop = 0;
+        current = 0;
+    }
 }
-// -->
 </script>
 </head>
 <body>
@@ -68,6 +86,7 @@ function wcisnieto(n){
 			<p><input type="button" value="start" onclick="start()" /></p>
 		</form>
 		<p id="komunikat"></p>
+        <p id="srednia"></p>
 	</div>
 </body>
 </html>
