@@ -37,6 +37,7 @@ var suma = 0;
 var proby = 0;
 function start(){
     if(stop == 0){
+        stop = 1;
         var rand = Math.random()*1000;
         setTimeout("setBlue()",rand);
     }
@@ -46,7 +47,6 @@ function setBlue(){
     current = Math.ceil(Math.random()*4);
     var name = "d" + current;
     document.getElementById(name).style.background = "blue";
-    stop = 1;
     odliczaj();
 }
 
