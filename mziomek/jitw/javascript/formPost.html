@@ -35,11 +35,11 @@ function zmienDate(){
     var data = new Date();
 	var zmiana = document.getElementById('data').value;
     var splited = zmiana.split('-');
-    const tab = [31,28,31,30,31,30,31,31,30,31,30,31];
-    if((zmiana.match(/-/g)).length == 2 && splited[1] <= 12 && splited[2] <= tab[splited[1]])
+    var tab = [31,28,31,30,31,30,31,31,30,31,30,31];
+    if((zmiana.match(/-/g)).length == 2 && splited[0] > 0 && splited[1] <= 12  && (splited[2] <= tab[splited[1]-1]))
         document.getElementById('data').value = splited[0] + "-" + ('0' + splited[1]).slice(-2) + "-" + ('0' + splited[2]).slice(-2);
     else
-        document.getElementById('data').value = splited[0] + "-" + ('0' + splited[1]).slice(-2) + "-" + ('0' + splited[2]).slice(-2) + "prze" + data.getFullYear() + '-' + ('0' + data.getMonth()+1).slice(-2) + '-' + ('0' + data.getDay()).slice(-2);
+        document.getElementById('data').value = splited[0] + "-" + ('0' + splited[1]).slice(-2) + "-" + ('0' + splited[2]).slice(-2) + "źle" + data.getFullYear() + '-' + ('0' + data.getMonth()+1).slice(-2) + '-' + ('0' + data.getDay()).slice(-2);
 }
 
 function czekaj(){
