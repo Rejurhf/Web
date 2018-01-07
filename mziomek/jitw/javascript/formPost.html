@@ -7,6 +7,7 @@
 	<title>Post</title>
 <script type="text/javascript">
 var stopFlag = false;
+var iloscZal = 1;
 function dataiczas(){
 	var data = new Date();
 	document.getElementById('data').value = data.getFullYear() + '-' + ('0' + data.getMonth()+1).slice(-2) + '-' + ('0' + data.getDay()).slice(-2);
@@ -44,14 +45,31 @@ function zmienDate(){
 function czekaj(){
 	stopFlag = true;
 }
+    
+
+function nowyZalacznik(){
+	var nowyZal = document.createElement('INPUT');
+    var enter = document.createElement('div');
+    iloscZal++;
+    var name = "plik" + iloscZal;
+    nowyZal.setAttribute("type", "file");
+    nowyZal.setAttribute("name", name);
+//    document.body.appendChild(nowyZal);
+    nowyZal.onclick = nowyZalacznik;
+    
+    var form = document.getElementById("form");
+    var tmp = document.getElementById("wyslij");
+
+    form.insertBefore(nowyZal, tmp);
+    form.insertBefore(enter, tmp);
+}
 </script>
 </head>
 <body onload="dataiczas()">
-    <?php include 'menu.php'; ?>
-	<form action="wpis.php" method="POST" enctype="multipart/form-data">
+	<form id="form" action="wpis.php" method="POST" enctype="multipart/form-data">
         Wpis<br>
         Nazwa użytkownika:<br>
-        <input type="text" name="name"><br><br>
+        <input id="nazwa" type="text" name="name"><br><br>
         Hasło:<br>
         <input type="password" name="passwd"><br><br>
         Wpis:<br>
@@ -61,10 +79,9 @@ function czekaj(){
         Godzina:<br>
         <input id="czas" type="text" name="time" value="" onchange="zmienCzas()" onkeyup="czekaj()" onclick="czekaj()"><br><br>
         Załączniki:<br>
-        <input type="file" name="plik1"><br>
-        <input type="file" name="plik2"><br>
-        <input type="file" name="plik3"><br><br>
-        <input type="submit" value="Wyślij">
+        <input id="tmp" type="file" name="plik1" onclick="nowyZalacznik()"><br>
+        
+        <input id="wyslij" type="submit" value="Wyślij">
         <input type="reset" value="Wyczyść" name="reset" />
 	</form>
 </body>
