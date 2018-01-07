@@ -5,65 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Post</title>
-<script type="text/javascript">
-var stopFlag = false;
-var iloscZal = 1;
-function dataiczas(){
-	var data = new Date();
-	document.getElementById('data').value = data.getFullYear() + '-' + ('0' + data.getMonth()+1).slice(-2) + '-' + ('0' + data.getDay()).slice(-2);
-	odliczaj();
-}
-
-function odliczaj(){
-	var data = new Date();
-	document.getElementById('czas').value = ('0' + data.getHours()).slice(-2) + ':' + ('0' + data.getMinutes()).slice(-2) + ':' + ('0' + data.getSeconds()).slice(-2);
-	
-	if(!stopFlag) window.setTimeout('odliczaj()', 1000);
-}
-
-function zmienCzas(){
-    var data = new Date();
-	var zmiana = document.getElementById('czas').value;
-    var splited = zmiana.split(':');
-    if((zmiana.match(/:/g)).length == 2 && splited[0] < 24 && splited[1] < 60 && splited[2] < 60 && splited[0] >= 0 && splited[1] >= 0 && splited[2] >= 0)
-        document.getElementById('czas').value = ('0' + splited[0]).slice(-2) + ":" + ('0' + splited[1]).slice(-2) + ":" + ('0' + splited[2]).slice(-2);
-    else
-        document.getElementById('czas').value = ('0' + data.getHours()).slice(-2) + ':' + ('0' + data.getMinutes()).slice(-2) + ':' + ('0' + data.getSeconds()).slice(-2);
-}
-    
-function zmienDate(){
-    var data = new Date();
-	var zmiana = document.getElementById('data').value;
-    var splited = zmiana.split('-');
-    var tab = [31,28,31,30,31,30,31,31,30,31,30,31];
-    if((zmiana.match(/-/g)).length == 2 && splited[0] > 0 && splited[1] <= 12  && (splited[2] <= tab[splited[1]-1]))
-        document.getElementById('data').value = splited[0] + "-" + ('0' + splited[1]).slice(-2) + "-" + ('0' + splited[2]).slice(-2);
-    else
-        document.getElementById('data').value = splited[0] + "-" + ('0' + splited[1]).slice(-2) + "-" + ('0' + splited[2]).slice(-2) + "źle" + data.getFullYear() + '-' + ('0' + data.getMonth()+1).slice(-2) + '-' + ('0' + data.getDay()).slice(-2);
-}
-
-function czekaj(){
-	stopFlag = true;
-}
-    
-
-function nowyZalacznik(){
-	var nowyZal = document.createElement('INPUT');
-    var enter = document.createElement('div');
-    iloscZal++;
-    var name = "plik" + iloscZal;
-    nowyZal.setAttribute("type", "file");
-    nowyZal.setAttribute("name", name);
-//    document.body.appendChild(nowyZal);
-    nowyZal.onclick = nowyZalacznik;
-    
-    var form = document.getElementById("form");
-    var tmp = document.getElementById("wyslij");
-
-    form.insertBefore(nowyZal, tmp);
-    form.insertBefore(enter, tmp);
-}
-</script>
+    <script type="text/javascript" src="javascript1.js"></script>
 </head>
 <body onload="dataiczas()">
 	<form id="form" action="wpis.php" method="POST" enctype="multipart/form-data">
@@ -83,6 +25,7 @@ function nowyZalacznik(){
         
         <input id="wyslij" type="submit" value="Wyślij">
         <input type="reset" value="Wyczyść" name="reset" />
+        
 	</form>
 </body>
 </html>
