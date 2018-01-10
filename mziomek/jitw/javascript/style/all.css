@@ -1,0 +1,139 @@
+html{
+    background: #ababab;
+}
+
+body{
+    background: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 800px;
+    padding: 2em;
+}
+
+#header {
+    background-color:gold;
+    text-align: center;
+    border: 2px solid darkgray;
+}
+
+#left {
+    display: table-cell;
+    background-color:#DDD;
+    width: 25%;
+    min-height: 150px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#left #menu{
+    width: 200px;
+    position: fixed;
+    text-align: center;
+}
+
+#left #menu p{
+    background-color: gray;
+    border: 1px solid black;
+}
+
+#left #menu p:hover{
+    background-color: darkgray;
+}
+
+#right {
+    display: table-cell;
+    background-color:#EEE;
+    width: 75%;
+    min-height: 150px;
+}
+
+#footer {
+    clear: both;
+    background-color:gold;
+}
+
+p{
+    margin: 0;
+    padding: 8px;
+    
+}
+
+h1{
+    color: blue;
+    letter-spacing: 10px;
+}
+
+h2{
+    color: red;
+}
+
+h3{
+    color: green;
+}
+
+#right p{
+    text-indent: 23px;
+}
+
+table{
+    border: 1mm;
+    border-color: green;
+}
+
+table thead{
+    text-transform: uppercase;
+}
+
+table tfoot{
+    text-transform: lowercase;
+}
+
+table tbody{
+    text-transform: lowercase;
+}
+
+.col1{
+    background-color: gainsboro;
+    border-color: red;
+}
+
+.col2{
+    background-color: skyblue;
+}
+
+ol{
+    list-style-type: upper-roman;
+}
+
+ol ol{
+    list-style-type: lower-roman;
+}
+
+ol ol ol{
+    list-style-type: lower-greek;
+}
+
+#img1{
+    float: left;
+}
+
+#img2{
+    float: right;
+}
+
+#right p:first-letter{
+	color: blue;
+    font-weight: 600;
+	line-height: 1.3;
+}
+
+a:hover{
+	cursor: default;
+}
+
+p:hover{
+	cursor: default;
+}

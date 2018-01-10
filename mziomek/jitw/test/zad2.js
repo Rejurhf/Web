@@ -14,7 +14,7 @@ function listStyles() {
 function setStyle(name) {
 	var styl;
 	for (var i = 0; (styl = document.getElementsByTagName("link")[i]); i++) { // Przeszukanie wszystkich elementow stylu w celu znalezienia
-										  // tego, ktorego atrybut title jest taki sam jak argument funkcji (name)
+// tego, ktorego atrybut title jest taki sam jak argument funkcji (name)
 		if (styl.getAttribute("title")) { // Szukanie tylko w tych, ktore maja ustawiony atrybut title
 			styl.disabled = true; // Wylaczenie stylu
 			if (styl.getAttribute("title") == name) styl.disabled = false; // Jesli znaleziono styl ktory ma byc ustawiony, to wlaczenie go
@@ -26,7 +26,7 @@ function setStyle(name) {
 function getStyle() {
 	var styl;
 	for (var i = 0; (styl = document.getElementsByTagName("link")[i]); i++) { // Przeszukanie wszystkich elementow stylu w celu znalezienia
-										  // jednego, ktory atrybut disabled ma ustawiony na false
+// jednego, ktory atrybut disabled ma ustawiony na false
 		if (styl.getAttribute("title") && !styl.disabled) return styl.getAttribute("title"); // Zwrocenie atrybutu title ustawionego stylu
 	}
 	return null;
