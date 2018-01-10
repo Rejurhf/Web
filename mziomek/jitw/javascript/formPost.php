@@ -8,24 +8,23 @@
     <script type="text/javascript" src="javascript1.js"></script>
 </head>
 <body onload="dataiczas()">
-	<form id="form" action="wpis.php" method="POST" enctype="multipart/form-data">
-        Wpis<br>
+	<form id="form" action="pliki.php" method="POST" enctype="multipart/form-data">
+        Wpis<br/>
         Nazwa użytkownika:<br>
         <input id="nazwa" type="text" name="name"><br><br>
-        Hasło:<br>
+        Hasło:<br/>
         <input type="password" name="passwd"><br><br>
-        Wpis:<br>
+        Wpis:<br/>
         <textarea name="dscrp" rows="10" cols="30">Opisz tutaj</textarea><br><br>
-        Data:<br>
+        Data:<br/>
         <input id="data" type="text" name="date" value="" onchange="zmienDate()"><br><br>
-        Godzina:<br>
+        Godzina:<br/>
         <input id="czas" type="text" name="time" value="" onchange="zmienCzas()" onkeyup="czekaj()" onclick="czekaj()"><br><br>
-        Załączniki:<br>
-        <input id="tmp" type="file" name="plik1" onclick="nowyZalacznik()"><br>
+        Załączniki:<br/>
+        <input type="file" name="file" onchange="nowyZalacznik()"><br>
+        <div id="conteiner"></div>
         
-        <input id="wyslij" type="submit" value="Wyślij">
-        <input type="reset" value="Wyczyść" name="reset" />
-        
+        <input id="wyslij" type="submit" value="Wyślij">        
 	</form>
 </body>
 </html>
