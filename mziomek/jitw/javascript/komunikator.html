@@ -11,13 +11,13 @@
 	<form id="form" action="wpis.php" method="POST" enctype="multipart/form-data">
         Komunikator<br>
         Wiadomości:<br>
-        <textarea id="view" name="view" rows="20" cols="50" disabled></textarea><br><br>
-        <input id="check" type="checkbox" name="onOff" onclick="checkBox()" nochange="read()">
-        <b id="kontr">Działa</b><br>
+        <textarea id="view" name="view" rows="20" cols="50" disabled>Wyłączony... Aby włączyć naciśnij checkbox, jeżeli wyświetli się napis "Działa" to znaczy że się powiodło.</textarea><br><br>
+        <input id="check" type="checkbox" name="onOff" onclick="checkBox()" onchange="read();">
+        <b id="kontr">Wyłączony</b><br>
         Nazwa użytkownika:<br>
         <input id="nazwa" type="text" name="name"><br>
         Wiadomość:<br>
-        <textarea id="message" name="message" rows="10" cols="30"></textarea><br>
+        <textarea id="message" name="message" rows="10" cols="30" onkeyup="ifEnter(event)"></textarea><br>
         
         <input id="wyslij" type="button" value="Wyślij" onclick="send()">
 	</form>

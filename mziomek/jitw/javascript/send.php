@@ -2,7 +2,11 @@
     $filename = "messages.txt";
     $file = fopen($filename, "a");
     $count = count(file($filename));
-    $text = $_GET["nick"] . ": " . $_GET["message"] . "\n";
+    $text = $_GET["nick"] . ": " . $_GET["message"];
+    if(strpos($string, "\n") !== FALSE) {
+      $text = $text . "\n";
+    }
+    //$text = $_GET["nick"] . ": " . $_GET["message"] . "\n";
     fwrite($file, $text);
     fclose($file);   
 
