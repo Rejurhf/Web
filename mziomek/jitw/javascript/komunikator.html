@@ -7,20 +7,19 @@
 	<title>Komunikator</title>
     <script type="text/javascript" src="komunikator.js"></script>
 </head>
-<body onload="read()">
+<body>
 	<form id="form" action="wpis.php" method="POST" enctype="multipart/form-data">
         Komunikator<br>
-        Komunikaty:<br>
-        <textarea id="view" name="view" rows="10" cols="30"></textarea><br><br>
-        <input id="check" type="checkbox" name="onOff" checked="checked" onclick="checkBox()">
+        Wiadomości:<br>
+        <textarea id="view" name="view" rows="20" cols="50" disabled></textarea><br><br>
+        <input id="check" type="checkbox" name="onOff" onclick="checkBox()" nochange="read()">
         <b id="kontr">Działa</b><br>
         Nazwa użytkownika:<br>
-        <input id="nazwa" type="text" name="name"><br><br>
+        <input id="nazwa" type="text" name="name"><br>
         Wiadomość:<br>
-        <textarea name="message" rows="10" cols="30">Opisz tutaj</textarea><br>
+        <textarea id="message" name="message" rows="10" cols="30"></textarea><br>
         
-        <input id="wyslij" type="submit" value="Wyślij">        
+        <input id="wyslij" type="button" value="Wyślij" onclick="send()">
 	</form>
-    <button type="button" onclick="read()">Change Content</button>
 </body>
 </html>

@@ -34,7 +34,8 @@ function zmienCzas() {
     
 function zmienDate() {
     'use strict';
-    var data = new Date(), zmiana = document.getElementById('data').value,
+    var data = new Date(),
+        zmiana = document.getElementById('data').value,
         splited = zmiana.split('-'),
         tab = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     if ((zmiana.match(/-/g)).length === 2 && splited[0] > 0 && splited[1] > 0 && splited[2] > 0 && splited[1] <= 12  && (splited[2] <= tab[splited[1] - 1])) {
