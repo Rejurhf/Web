@@ -55,7 +55,7 @@ function createCookie(name, styl, days) {
     } else {
         expires = '';
     }
-    document.cookie = name + '=' + styl + expires + ';path=/';
+    document.cookie = name + '=' + styl + expires + '; path=/';
 }
 
 function readCookie(name) {
@@ -71,7 +71,7 @@ function readCookie(name) {
             c = c.substring(1, c.length);
         }
         if (c.indexOf(nameE) === 0) {
-            return c.substring(name.length, c.length);
+            return c.substring(nameE.length, c.length);
         }
     }
     return null;

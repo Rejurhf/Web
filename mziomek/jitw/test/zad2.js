@@ -61,7 +61,7 @@ function readCookie(name) {
 window.onload = function(e) {
 	var styleCookie = readCookie("style"); // Odczytanie nazwy stylu z ciasteczka
 	var styleTitle = styleCookie ? styleCookie : getStyle(); // Jesli w ciasteczku jest zapisana nazwa stylu to przypisanie jej
-								 // do zmiennej styleTytle, w przeciwnym wypadku przypisanie aktualnego stylu
+// do zmiennej styleTytle, w przeciwnym wypadku przypisanie aktualnego stylu
 	setStyle(styleTitle); // Ustawienie stylu
 }
 
